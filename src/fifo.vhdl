@@ -12,17 +12,13 @@ entity fifo is
 end fifo;
 
 
-
 architecture arch of fifo is
-
 	type elem_array_type is array(ELEM_NUM-1 downto 0) of std_logic_vector (ELEM_BITS-1 downto 0);
 	signal elem_array : elem_array_type;
     constant empty_elem : std_logic_vector (ELEM_BITS-1 downto 0) := (others =>'0') ;
     signal u1 : unsigned (2 downto 0);
 
 begin
-
-
 
 	main_fifo : process(clk) is
 		variable counter : natural range 0 to ELEM_NUM := 0;
