@@ -65,11 +65,9 @@ begin
         wr <= '0';
         rd <= '1';
 
-        wait until rising_edge(clk);
         wait until falling_edge(clk);
         assert elem_out = "001" report "fail first read";
 
-        wait until rising_edge(clk);
         wait until falling_edge(clk);
         assert elem_out = "010" report "fail second read";
 
